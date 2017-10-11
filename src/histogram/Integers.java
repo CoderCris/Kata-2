@@ -24,9 +24,17 @@ public class Integers {
     private void input() {
         System.out.println("Tamaño del vector:");
         Scanner input = new Scanner(System.in);
+        while (!input.hasNextInt()){
+            System.out.println("El valor introducido no es un entero, por favor, introduzca otro valor");
+            input.next();
+        }
         data = new int[input.nextInt()];
         for(int i=0; i<data.length; i++){
             System.out.println("Introduzca elemento número:" + (i+1));
+            while (!input.hasNextInt()){
+            System.out.println("El valor introducido no es un entero, por favor, introduzca otro valor");
+            input.next();
+            }
             data[i] = input.nextInt();
         }
     }
